@@ -1,0 +1,8 @@
+{
+  "name": "Campus E-Commerce Portal",
+  "description": "A multi-vendor e-commerce portal for campus students featuring buyer, vendor, and admin roles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
