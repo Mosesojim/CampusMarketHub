@@ -84,7 +84,7 @@ export const ProductService = {
         .eq('id', id)
         .single();
       if (error) throw error;
-      return data as Product[];
+      return data as Product;
     } catch (err) {
       console.warn("ProductService falling back to mock data for byId:", err);
       const allLocal = getLocalArray<any>('campusmarket_products');

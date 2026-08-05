@@ -39,18 +39,12 @@ export function ProductDetail() {
         if (!data) throw new Error('Product not found');
         setProduct(data);
         
-                const profiles = getLocalObject<any>('campusmarket_vendor_profiles');
-        let vendorProfile = profiles[data.vendor_id];
+                let vendorProfile = null;
         
-        
-        
-                try {
+        try {
            const remoteProfile = await ProductService.getVendorProfile(data.vendor_id);
            if (remoteProfile) {
               vendorProfile = remoteProfile;
-              // Also cache it locally to avoid future misses
-              profiles[data.vendor_id] = remoteProfile;
-              localStorage.setItem('campusmarket_vendor_profiles', JSON.stringify(profiles));
            }
         } catch(error) {
            console.warn("Failed to fetch vendor profile:", error);

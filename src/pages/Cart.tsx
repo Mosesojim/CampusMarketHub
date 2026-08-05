@@ -63,9 +63,9 @@ export function Cart() {
         const vendorProfile = profiles[item.vendor_id] || {};
         const sellerDetails = {
            name: vendorProfile.name,
-           phone: vendorProfile.phone || "+234 801 234 5678",
-           whatsapp: vendorProfile.whatsapp || "+234 801 234 5678",
-           address: vendorProfile.address || "Campus Hostel"
+           phone: vendorProfile.phone || "",
+           whatsapp: vendorProfile.whatsapp || "",
+           address: vendorProfile.address || ""
         };
         return {
           id: "ord-" + Date.now() + "-" + Math.random().toString(36).substr(2, 5),
@@ -84,9 +84,9 @@ export function Cart() {
           const supabaseOrders = selectedCartItems.map(item => {
             const vendorProfile = profiles[item.vendor_id] || {};
             const sellerDetails = {
-              phone: vendorProfile.phone || "+234 801 234 5678",
-              whatsapp: vendorProfile.whatsapp || "+234 801 234 5678",
-              address: vendorProfile.address || "Campus Hostel"
+              phone: vendorProfile.phone || "",
+              whatsapp: vendorProfile.whatsapp || "",
+              address: vendorProfile.address || ""
             };
             return {
               buyer_id: user.id,
